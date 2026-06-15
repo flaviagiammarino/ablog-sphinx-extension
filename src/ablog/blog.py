@@ -352,6 +352,7 @@ class Post(BlogPageMixin):
         self._blog = blog
         self.docname = docname
         self.description = info["description"]
+        self.summary = info["summary"]
         self.keywords = info["keywords"]
         self.image_src = info["image_src"]
         self.image_alt = info["image_alt"]
