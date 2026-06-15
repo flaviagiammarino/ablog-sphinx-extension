@@ -75,6 +75,7 @@ class PostDirective(Directive):
         # "location": _split,
         # "language": _split,
         "description": str,
+        "summary": str,
         "keywords": str,
         "image_src": str,
         "image_alt": str,
@@ -123,6 +124,7 @@ class PostListDirective(Directive):
         # "location": _split,
         # "language": _split,
         "description": str,
+        "summary": str,
         "keywords": str,
         "image_src": str,
         "image_alt": str,
@@ -146,6 +148,7 @@ class PostListDirective(Directive):
         # node["location"] = self.options.get("location", [])
         # node["language"] = self.options.get("language", [])
         node["description"] = self.options.get("description", None)
+        node["summary"] = self.options.get("summary", None)
         node["keywords"] = self.options.get("keywords", None)
         node["image_src"] = self.options.get("image_src", None)
         node["image_alt"] = self.options.get("image_alt", None)
@@ -243,6 +246,7 @@ def _update_post_node(node, options, arguments):
     # node["location"] = options.get("location", [])
     # node["language"] = options.get("language", [])
     node["description"] = options.get("description", None)
+    node["summary"] = options.get("summary", None)
     node["keywords"] = options.get("keywords", None)
     node["image_src"] = options.get("image_src", None)
     node["image_alt"] = options.get("image_alt", None)
@@ -422,6 +426,7 @@ def process_posts(app, doctree):
             # "location": node["location"],
             # "language": node["language"],
             "description": node["description"],
+            "summary": node["summary"],
             "keywords": node["keywords"],
             "image_src": node["image_src"],
             "image_alt": node["image_alt"],
